@@ -1,6 +1,9 @@
 package sda;
 
 import sda.Iterator.ListWithId;
+import sda.Obserwator.EmailNotifications;
+import sda.Obserwator.TemperatureProvider;
+import sda.Obserwator.Observer;
 import sda.Pełnomocnik.DataLoader;
 import sda.Pełnomocnik.DataLoaderlpml;
 import sda.Pełnomocnik.ProxyDataLoader;
@@ -9,6 +12,7 @@ import sda.Strategia.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Iterator;
+
 
 import static java.awt.Color.white;
 import static java.awt.SystemColor.info;
@@ -79,9 +83,17 @@ public class App {
 //            }
 //        }
 
-        TaxContext context = new TaxContext(new TaxEn());
+//        TaxContext context = new TaxContext(new TaxEn());
+//
+//        System.out.println(context.calculateTax(BigDecimal.valueOf(100)));
 
-        System.out.println(context.calculateTax(BigDecimal.valueOf(100)));
+        TemperatureProvider provider = new TemperatureProvider();
+        Observer emailObserver = new EmailNotifications(provider);
+
+        provider.setTemperature(15.0);
+        provider.setTemperature(20.0);
+        provider.setTemperature(17.0);
+
 
     }
 }
