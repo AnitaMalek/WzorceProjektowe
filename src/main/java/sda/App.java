@@ -98,13 +98,7 @@ public class App {
 //        provider.setTemperature(20.0);
 //        provider.setTemperature(17.0);
 
-        ShopRequest shopRequest = new ShopRequest("Iphone 7", 2);
-        Sklep sklep = new Sklep();
-        SklepCentralny sklepCentralny = new SklepCentralny();
-        Hurtownia hurtownia = new Hurtownia();
-        sklep.setNextShop(sklepCentralny);
-        sklepCentralny.setNextShop(hurtownia);
-        sklep.sell(shopRequest);
+
     }
 }
 
