@@ -8,6 +8,10 @@ import sda.Pełnomocnik.DataLoader;
 import sda.Pełnomocnik.DataLoaderlpml;
 import sda.Pełnomocnik.ProxyDataLoader;
 import sda.Strategia.*;
+import sda.ŁańcuchZobowiązań.Hurtownia;
+import sda.ŁańcuchZobowiązań.ShopRequest;
+import sda.ŁańcuchZobowiązań.Sklep;
+import sda.ŁańcuchZobowiązań.SklepCentralny;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -86,15 +90,21 @@ public class App {
 //        TaxContext context = new TaxContext(new TaxEn());
 //
 //        System.out.println(context.calculateTax(BigDecimal.valueOf(100)));
+//
+//        TemperatureProvider provider = new TemperatureProvider();
+//        Observer emailObserver = new EmailNotifications(provider);
+//
+//        provider.setTemperature(15.0);
+//        provider.setTemperature(20.0);
+//        provider.setTemperature(17.0);
 
-        TemperatureProvider provider = new TemperatureProvider();
-        Observer emailObserver = new EmailNotifications(provider);
-
-        provider.setTemperature(15.0);
-        provider.setTemperature(20.0);
-        provider.setTemperature(17.0);
-
-
+        ShopRequest shopRequest = new ShopRequest("Iphone 7", 2);
+        Sklep sklep = new Sklep();
+        SklepCentralny sklepCentralny = new SklepCentralny();
+        Hurtownia hurtownia = new Hurtownia();
+        sklep.setNextShop(sklepCentralny);
+        sklepCentralny.setNextShop(hurtownia);
+        sklep.sell(shopRequest);
     }
 }
 
