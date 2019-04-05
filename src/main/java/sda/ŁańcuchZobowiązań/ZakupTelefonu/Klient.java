@@ -1,4 +1,4 @@
-package sda.ŁańcuchZobowiązań;
+package sda.ŁańcuchZobowiązań.ZakupTelefonu;
 
 public class Klient {
 

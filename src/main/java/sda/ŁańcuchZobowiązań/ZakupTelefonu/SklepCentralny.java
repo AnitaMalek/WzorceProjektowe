@@ -1,6 +1,4 @@
-package sda.ŁańcuchZobowiązań;
-
-import java.util.Map;
+package sda.ŁańcuchZobowiązań.ZakupTelefonu;
 
 public class SklepCentralny extends ShopAvailability{
 

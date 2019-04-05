@@ -1,26 +1,5 @@
 package sda;
 
-import sda.Iterator.ListWithId;
-import sda.Obserwator.EmailNotifications;
-import sda.Obserwator.TemperatureProvider;
-import sda.Obserwator.Observer;
-import sda.Pełnomocnik.DataLoader;
-import sda.Pełnomocnik.DataLoaderlpml;
-import sda.Pełnomocnik.ProxyDataLoader;
-import sda.Strategia.*;
-import sda.ŁańcuchZobowiązań.Hurtownia;
-import sda.ŁańcuchZobowiązań.ShopRequest;
-import sda.ŁańcuchZobowiązań.Sklep;
-import sda.ŁańcuchZobowiązań.SklepCentralny;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Iterator;
-
-
-import static java.awt.Color.white;
-import static java.awt.SystemColor.info;
-
 public class App {
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package sda.ŁańcuchZobowiązań;
+package sda.ŁańcuchZobowiązań.ZakupTelefonu;
 
 public class ShopRequest {
 
@@ -11,14 +11,17 @@ public class ShopRequest {
     }
 
     public String getTelephone() {
+
         return telephone;
     }
 
     public int getTelephonesQuantity() {
+
         return telephonesQuantity;
     }
 
     public void setTelephone(String telephone) {
+
         this.telephone = telephone;
     }
 

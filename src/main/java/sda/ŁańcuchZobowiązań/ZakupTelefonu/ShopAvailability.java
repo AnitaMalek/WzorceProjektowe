@@ -1,14 +1,15 @@
-package sda.ŁańcuchZobowiązań;
+package sda.ŁańcuchZobowiązań.ZakupTelefonu;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class ShopAvailability {
 
-    protected Map<String, Integer> shopItems = new HashMap<>();
+    protected Map <String, Integer> shopItems = new HashMap<>();
     protected ShopAvailability nextShop;
 
     public ShopAvailability() {
+
         addShopItems();
     }
 
