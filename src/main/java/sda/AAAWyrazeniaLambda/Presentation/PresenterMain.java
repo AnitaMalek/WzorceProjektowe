@@ -33,6 +33,7 @@ public class PresenterMain {
     }
 
     public static void presentText(Presenter presenter) {
+
         presenter.present("text");
     }
 
