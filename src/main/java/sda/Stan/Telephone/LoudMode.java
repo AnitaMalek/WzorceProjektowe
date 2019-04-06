@@ -16,6 +16,5 @@ public class LoudMode implements SoundState{
     @Override
     public void printStatus() {
         System.out.println(" Volume loud");
-
     }
 }
