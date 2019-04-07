@@ -1,23 +1,23 @@
-package sda.AAAFunctionalInterface.Userr;
+package sda.AAAFunctionalInterface.Function.User;
 
-public class Userr {
+public class User {
 
     String name;
     String lastName;
-    int age;
+    String city;
 
-    public Userr(String name, String lastName, int age) {
+    public User(String name, String lastName, String city) {
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+        this.city = city;
     }
 
     @Override
     public String toString() {
-        return "Userr{" +
+        return "User{" +
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", age=" + age +
+                ", city='" + city + '\'' +
                 '}';
     }
 }

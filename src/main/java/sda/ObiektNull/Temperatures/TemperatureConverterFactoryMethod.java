@@ -6,9 +6,9 @@ public class TemperatureConverterFactoryMethod {
 
         if (type.equals("C->F")){
             return new CelcToFahr();
-        }else if (type.equals("C->K")){
+        } else if (type.equals("C->K")){
             return new CelcToKelv();
-        }else {
+        } else {
             return new UnknownConverter();
         }
 

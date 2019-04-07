@@ -1,4 +1,4 @@
-package sda.AAAFunctionalInterface.User;
+package sda.AAAFunctionalInterface.Function.User;
 
 import java.util.function.Function;
 
