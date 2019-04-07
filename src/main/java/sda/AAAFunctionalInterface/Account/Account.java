@@ -7,4 +7,5 @@ public class Account {
     public Account(String name) {
         this.name = name;
     }
+
 }
