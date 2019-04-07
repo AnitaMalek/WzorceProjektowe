@@ -61,12 +61,19 @@ public class PredicateExample {
 
 
         Predicate<String> predicateIfNumberIsCorrect = (String number)-> {
-            if (number.startsWith("+48") && number.length()== 12){
+            String numberPart = number.substring(3);
+            long numberInt;
+            try {
+                numberInt = Long.parseLong(numberPart);
+            }catch (NumberFormatException e) {
+                numberInt = -1;
+            }
+            if (number.startsWith("+48") && number.length()== 12 && numberInt != -1){
                 return true;
             } else {
                 return false;
             }
         };
-        System.out.println("Czy numer jest poprawny?: " + predicateIfNumberIsCorrect.test("+48500521519"));
+        System.out.println("Czy numer jest poprawny?: " + predicateIfNumberIsCorrect.test("+48500521522"));
     }
 }
