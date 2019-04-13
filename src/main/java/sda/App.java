@@ -1,5 +1,9 @@
 package sda;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
 public class App {
     public static void main(String[] args) {
 
@@ -76,6 +80,8 @@ public class App {
 //        provider.setTemperature(15.0);
 //        provider.setTemperature(20.0);
 //        provider.setTemperature(17.0);
+
+
 
 
     }

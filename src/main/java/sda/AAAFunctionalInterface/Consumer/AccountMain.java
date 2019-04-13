@@ -69,6 +69,18 @@ public class AccountMain {
         System.out.println("Po usunieciu");
         accountsShower.accept(listOfUsers);
 
+        Consumer<Integer> editById = (Integer idNumber)-> {
+            for (User userToEdit : listOfUsers){
+                if (userToEdit.getId() == idNumber) {
+                    userToEdit.setName("Apolonia");
+                    return;
+                }
+            }
+        };
+        editById.accept(1);
+        System.out.println("Po edycji: ");
+        accountsShower.accept(listOfUsers);
+
 
 
 
