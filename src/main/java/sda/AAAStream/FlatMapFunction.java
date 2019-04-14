@@ -38,8 +38,5 @@ public class FlatMapFunction {
             System.out.println(number);
         });
 
-
-
-
     }
 }
