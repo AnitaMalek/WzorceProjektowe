@@ -9,17 +9,29 @@ import java.util.List;
 public class TaxiDispatcher implements Dispatcher {
 
     private List<Driver> drivers = new ArrayList<>();
-    private  List<Driver> orders = new ArrayList<>();
+    private List<String> orders = new ArrayList<>();
 
 
 
     @Override
     public void newOrder(String order) {
-        System.out.println("kurs");
+        orders.add(order);
     }
 
     @Override
     public void addDriver(Driver driver) {
-        System.out.println("kierowca");
+        drivers.add(driver);
+    }
+
+    public void run() {
+        for (String str: orders){
+            for (Driver drv: drivers) {
+                if (drv.isStan()){
+                    drv.onNewOrder(str);
+                    drv.setStan(false);
+                    break;
+                }
+            }
+        }
     }
 }

@@ -14,8 +14,10 @@ public class App {
         dispatcher.addDriver(taxiDriver);
         dispatcher.addDriver(uberDriver);
 
-        dispatcher.newOrder("Zecenia: ul. Emili Gierczak 38");
-        dispatcher.newOrder("Zecenia: ul. Piastow 38");
+        dispatcher.newOrder("Zlecenia: ul. Emili Gierczak 38");
+        dispatcher.newOrder("Zlecenia: ul. Piastow 38");
+
+        dispatcher.run();
 
     }
 }

@@ -22,10 +22,10 @@ public class FlatMapVideos {
                 Arrays.asList(video4, video5));
 
         Season season1 = new Season("GOTS1", 1,
-                Arrays.asList(episode, episode1));
+                Arrays.asList(episode, episode2));
 
         Season season2 = new Season("GOTS2", 2,
-                Arrays.asList(episode2));
+                Arrays.asList(episode1));
 
         List <Season> seasons = Arrays.asList(season1, season2);
         System.out.println("FlatMap (spłaszczenie do episodów) : ");
@@ -103,7 +103,41 @@ public class FlatMapVideos {
                 .forEach((String videoUrls) -> {
                     System.out.println(videoUrls);
                 });
-    }
+
+
+        seasons.stream()
+                .filter((Season s) -> {
+                  return s.seasonNumber % 2 == 0;
+                })
+                .flatMap((Season s) -> s.episodes.stream())
+                .forEach((Episode e) -> {
+                    System.out.println("Epizody parzystych sezonów: " + e);
+                });
+
+        seasons.stream()
+                .filter((Season s) -> {
+                    return s.seasonNumber % 2 == 0;
+                })
+                .flatMap((Season s) -> s.episodes.stream())
+                .flatMap((Episode e) -> e.videos.stream())
+                .forEach((Video v) -> {
+                    System.out.println("Video z parzystych sezonów: " + v);
+    });
+
+        seasons.stream()
+                .filter((Season s) -> {
+                    return s.seasonNumber % 2 == 0;
+                })
+                .flatMap((Season s) -> s.episodes.stream())
+                .filter((Episode e) -> {
+                    return e.episodeNumber % 2 == 0;
+                })
+                .flatMap((Episode e) -> e.videos.stream())
+                .forEach((Video v) -> {
+                    System.out.println("Video z parzystych sezonów i epizodów: " + v);
+                });
+
+}
 
     static class Video{
 
